@@ -5,14 +5,24 @@ type State = {
   money: number;
   betSize: number;
   setLogged: (login: boolean) => void;
+  withdraw: (count: number) => void;
+  deposit: (count: number) => void;
 };
 
 export const useStore = create<State>((set) => ({
-  logged: localStorage.getItem("logged") === "authenticated" || false,
-  money: 0,
+  logged: Boolean(localStorage.getItem("logged")) || false,
+  money: Number(localStorage.getItem("money")) || 0,
   betSize: 10,
-  deposit: (count: number) => set((state) => ({ money: state.money + count })),
-  withdraw: (count: number) => set((state) => ({ money: state.money - count })),
+  deposit: (count: number) =>
+    set((state) => {
+      localStorage.setItem("money", String(state.money + count));
+      return { money: state.money + count };
+    }),
+  withdraw: (count: number) =>
+    set((state) => {
+      localStorage.setItem("money", String(state.money - count));
+      return { money: state.money - count };
+    }),
   setBetSize: (size: number) => set(() => ({ money: size })),
   setLogged: (login: boolean) => {
     set(() => ({ logged: login }));

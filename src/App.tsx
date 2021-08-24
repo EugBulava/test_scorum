@@ -1,20 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useStore } from "./store/store";
+
+import { LoggedLayout } from "./layouts/LoggedLayout";
+import { PublicLayout } from "./layouts/PublicLayout";
 import { Header } from "./components/Header";
-import { routes } from "./routes/routes";
 
 export const App: React.FC = () => {
+  const { logged } = useStore();
+
   return (
     <>
       <Router>
         <Header />
-        <Switch>
-          {routes.map((el) => (
-            <Route key={el.id} exact path={el.path}>
-              {el.pageComponent}
-            </Route>
-          ))}
-        </Switch>
+        {logged ? <LoggedLayout /> : <PublicLayout />}
       </Router>
     </>
   );

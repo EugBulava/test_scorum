@@ -1,10 +1,12 @@
 import React from "react";
-import { IsAuth } from "../IsAuth";
+import { MoneyControl } from "../Forms/MoneyControl";
+import { Game } from "../Game/Game";
 
 export const Home: React.FC = () => {
   return (
-    <IsAuth>
-      <div>HOME123</div>
-    </IsAuth>
+    <>
+      <MoneyControl />
+      <Game />
+    </>
   );
 };

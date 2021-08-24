@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { validUsersData } from "../consts/consts";
-import { useStore } from "../store/store";
-import { CustomInput } from "./CustomInput";
+import { validUsersData } from "../../consts/consts";
+import { useStore } from "../../store/store";
+import { CustomInput } from "../CustomInput";
 
 export const LoginForm: React.FC = () => {
   const { setLogged } = useStore();
@@ -37,7 +37,7 @@ export const LoginForm: React.FC = () => {
         setLoading(false);
       }, 2000);
     },
-    [loginData, setLogged, history]
+    [loginData, history, setLogged]
   );
 
   return (
