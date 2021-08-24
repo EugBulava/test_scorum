@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { RedirectComponent } from "../components/PageComponents/RedirectComponent";
-import { HOME_PATH } from "../consts/consts";
+import { HOME_PATH } from "../consts/globalConsts";
 
 import { loggedRoutes } from "../routes/routes";
 

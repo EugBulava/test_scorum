@@ -457,6 +457,18 @@ body {
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
+.lds-dual-ring.blue:after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: -9px;
+  border-radius: 50%;
+  border: 6px solid #4538d2;
+  border-color: #4538d2 transparent #4538d2 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -486,7 +498,20 @@ body {
 
 .game-wrapper {
   padding: 40px;
-  background-color: #bbdefb;
+  background-color: #f2f2f2;
+}
+
+.game-title {
+  text-align: center;
+}
+
+.game-description {
+  text-align: center;
+  font-size: 1rem;
+  color: #aeb1b6;
+}
+
+.cards-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -518,6 +543,8 @@ body {
 .back {
   background-color: #bdbdbd;
   transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
 }
 .card.active .front {
   transform: rotateY(180deg);
@@ -528,7 +555,65 @@ body {
 
 .button-play {
   border: none;
-  /* background-color: ; */
+  background-color: #4538d2;
+  color: #ffffff;
+  padding: 15px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-play:hover {
+  background-color: #2617cf;
+}
+
+.game-buttons__wrapper {
+  display: flex;
+}
+
+.choose-button {
+  margin: 0 100px;
+  border: none;
+  background-color: #4538d2;
+  color: #ffffff;
+  padding: 15px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.choose-button:hover {
+  background-color: #2617cf;
+}
+
+.bet-size-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bet-size {
+  border: none;
+  padding: 20px;
+  background-color: #4538d2;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.bet-size:hover,
+.bet-size.active {
+  background-color: #2617cf;
+}
+
+.bet-size-container .bet-size:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.bet-size-container .bet-size:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.result-text {
+  font-size: 20px;
+  text-align: center;
 }
 
 /* MEDIA */

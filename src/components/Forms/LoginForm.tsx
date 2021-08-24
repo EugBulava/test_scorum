@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { validUsersData } from "../../consts/consts";
+import { validUsersData } from "../../consts/globalConsts";
 import { useStore } from "../../store/store";
 import { CustomInput } from "../CustomInput";
 

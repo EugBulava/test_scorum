@@ -18,7 +18,6 @@ export const WithdrawForm: React.FC<IWithdrawFormProps> = ({
         className="withdraw-input"
         type="number"
         min={1}
-        max={250}
         value={value}
         onChange={onChange}
       />

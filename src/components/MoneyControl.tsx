@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from "react";
-import { useStore } from "../../store/store";
-import { DepositForm } from "./DepositForm";
-import { WithdrawForm } from "./WithdrawForm";
+import { useStore } from "../store/store";
+import { toDivide } from "../utils/divideNumber";
+import { DepositForm } from "./Forms/DepositForm";
+import { WithdrawForm } from "./Forms/WithdrawForm";
 
 export const MoneyControl: React.FC = () => {
   const { withdraw, deposit, money } = useStore();
@@ -49,7 +50,7 @@ export const MoneyControl: React.FC = () => {
           handleSubmit={handleWithdraw}
         />
       </div>
-      <h1 className="balance">Balance: {money}</h1>
+      <h1 className="balance">Balance: {toDivide(money)}</h1>
     </div>
   );
 };
