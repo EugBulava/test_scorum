@@ -4,6 +4,11 @@ import { betSizes, cardValues } from "../../consts/globalConsts";
 import { useStore } from "../../store/store";
 import { Card } from "../Card";
 
+type TCard = {
+  image: string;
+  value: string;
+};
+
 type GameStatuses =
   | "init"
   | "game"
@@ -21,7 +26,7 @@ export const Game: React.FC = () => {
 
   const [gameStatus, setGameStatus] = useState<GameStatuses>("init");
   const [bets, setBets] = useState(betSizes);
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<TCard[]>([]);
   const [activeCards, setActiveCards] = useState(false);
 
   const handleStartGame = useCallback(() => {
@@ -52,6 +57,7 @@ export const Game: React.FC = () => {
         bet();
         getRandomCards(2)
           .then((res) => {
+            console.log(res);
             setCards(res.data.cards);
             setTimeout(() => {
               setActiveCards(true);

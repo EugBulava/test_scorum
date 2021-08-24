@@ -1,20 +1,14 @@
 import React from "react";
 
-interface ICard {
+interface ICardProps {
   card: {
-    code: string;
     image: string;
-    images: {
-      svg: string;
-      png: string;
-    };
     value: string;
-    suit: string;
   };
   active: boolean;
 }
 
-export const Card: React.FC<ICard> = (props) => {
+export const Card: React.FC<ICardProps> = (props) => {
   return (
     <div className={`card ${props.active && "active"}`}>
       <div className="front"></div>
